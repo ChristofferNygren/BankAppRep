@@ -17,7 +17,7 @@ namespace BankApp
             this.Id = Guid.NewGuid();
             this.Name = DecideAccountHolderName();
             this.UserAccount = new Account(ChooseAccountType());
-            
+
         }
 
         public string DecideAccountHolderName()
@@ -27,11 +27,33 @@ namespace BankApp
             string name = Console.ReadLine();
             return name;
         }
-        private string ChooseAccountType()
+        public string ChooseAccountType()
         {
-            Console.WriteLine($"Ok, {Name}. Would you like to set up a Debit-Account, or a Credit-Account?");
-            Console.WriteLine("[1] for Debit-Account.");
-            Console.WriteLine("[2] for Credit-Account.");           
+            string accountType = "";
+            while (accountType != "Debitcard" || accountType != "ACB Express card")
+            {
+                Console.WriteLine($"Ok, {Name}. Would you like to set up a Debit-Account, or a Credit-Account?");
+                Console.WriteLine("[1] for Debit-Account.");
+                Console.WriteLine("[2] for ACB Express-Account.");
+                accountType = SetAccountType();               
+            }
+            return accountType;
+        }
+        public string SetAccountType()
+        {
+            string choice = Console.ReadLine();
+            string a = "";
+            switch (choice)
+            {
+                case "1":
+                    a = "Debitcard";
+                    return a;
+                case "2":
+                    a = "ACB Express card";
+                    return a;
+                default:
+                    return a;
+            }
         }
     }
 }
