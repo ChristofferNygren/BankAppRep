@@ -8,7 +8,15 @@ namespace BankApp
 {
     public class Calculations
     {
-        // add external calculations to the account here.
+        public void AddFunds()
+        {
+
+        }
+        public void WithdrawFunds()
+        {
+
+        }
+        // Other calculations should be added here.
     }
 
 }
