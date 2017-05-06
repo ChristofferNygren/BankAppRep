@@ -3,20 +3,38 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace BankApp
 {
     public class Menus
     {
-    
-    }
-    public void MainMenu()
-    {
+        Menuchoice menuchoice = new Menuchoice();
+        public void MainMenu()
+        {
+            Console.WriteLine("Hello and welcome to ACB, How can we be of service today?");
+            Console.WriteLine("Would you like to:\n [1] Set up an account.");
+            Console.WriteLine("[2] Manage existing account.");
+            Console.WriteLine("[3] Make a deposit or withdrawl.");
+            Console.WriteLine("[4] ");//Om jag kommer på nåt annat
+
+        }
+        public void TransactionMenu()
+        {
+            Console.WriteLine("Would you like to make a witdrawl, press [1]\nDeposit, press [2]");
+            menuchoice.transactionMenuChoice();
+        }
+        public void SetUpAccount()
+        {
+            Console.WriteLine("Allrighty then! redirecting you to the setup page");
+            Thread.Sleep(3000);
+
+        }
+        public void ManageAccount()
+        {
+
+        }
 
     }
-    public void TransactionMenu()
-    {
 
-    }
-    // Other menus should be added here.
 }
