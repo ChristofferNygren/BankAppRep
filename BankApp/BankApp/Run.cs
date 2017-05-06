@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BankApp
 {
-    class Run
+    public class Run
     {
     }
     public void RunTheApp()
