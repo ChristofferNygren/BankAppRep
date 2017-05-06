@@ -9,6 +9,7 @@ namespace BankApp
 {
     public class Menus
     {
+        Menuchoice menuchoice = new Menuchoice();
         public void MainMenu()
         {
             Console.WriteLine("Hello and welcome to ACB, How can we be of service today?");
@@ -23,7 +24,7 @@ namespace BankApp
         {
             Console.WriteLine("Would you like to make a:\n[1] Deposit\n[2] Withdraw");
             menuchoice.TransactionMenuChoice();
-            Console.WriteLine($"Your total balance is: {account.AccountBalance}");
+            Console.WriteLine($"Your total balance is: {account.AccountBalanceDebit}");
             Console.WriteLine("Press any key to continue...");
             Console.ReadKey();
         }
@@ -38,6 +39,24 @@ namespace BankApp
                 Console.WriteLine("How much would you like to deposit?");
                 menuchoice.DepositMenuChoice();
         }
+        public void CreditMenu(AccountHolder accountholder)
+        {
+            if (accountholder.UserAccount.AccountType == "ACB Express card")
+            {
+                Console.WriteLine("How much would you like to withdraw?");
+                menuchoice.CreditMenuChoice();
+            }
+            else
+            {
+                Console.WriteLine("You don't have a ACB Express card.");
+                Console.WriteLine("To use this feature upgrade your card in Manage account section.");
+            }     
+        }
+        public void DebitMenu()
+        {
+
+        }
+
         public void ManageAccount()
         {
 

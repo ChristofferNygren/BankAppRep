@@ -54,11 +54,32 @@ namespace BankApp
         }
         public void WithdrawMenuChoice()
         {
+            string choice = Console.ReadLine();
 
+            switch (choice)
+            {
+                case "1":
+                    menus.DebitMenu();
+                    break;
+                case "2":
+                    menus.CreditMenu();
+                    break;
+                default:
+                    break;
+            }
         }
         public void DepositMenuChoice()
         {
 
+        }
+
+        public void CreditMenuChoice()
+        {
+            double Withdraw = double.Parse(Console.ReadLine());
+
+        }
+        public void DebitMenuChoice()
+        {
         }
     }
 }
