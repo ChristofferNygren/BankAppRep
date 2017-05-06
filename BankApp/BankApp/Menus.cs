@@ -8,8 +8,7 @@ using System.Threading;
 namespace BankApp
 {
     public class Menus
-    {
-        Menuchoice menuchoice = new Menuchoice();
+    {      
         public void MainMenu()
         {
             Console.WriteLine("Hello and welcome to ACB, How can we be of service today?");
@@ -17,12 +16,15 @@ namespace BankApp
             Console.WriteLine("[2] Manage existing account.");
             Console.WriteLine("[3] Make a deposit or withdrawl.");
             Console.WriteLine("[4] ");//Om jag kommer på nåt annat
-
         }
-        public void TransactionMenu()
+
+        public void TransactionMenu(Account account)
         {
             Console.WriteLine("Would you like to make a witdrawl, press [1]\nDeposit, press [2]");
             menuchoice.transactionMenuChoice();
+            Console.WriteLine($"Your total balance is: {account.AccountBalance}");
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
         }
         public void ManageAccount()
         {

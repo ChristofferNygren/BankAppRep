@@ -9,12 +9,13 @@ namespace BankApp
     public class Run
     {
         Menus menus = new Menus();
+        Menuchoice menuchoice = new Menuchoice();
         AccountHolder accountholder;
         public void RunTheApp()
-        {
-            
+        {           
             menus.MainMenu();
-            MainMenuChoice();
+            menuchoice.MainMenuChoice();
+            menuchoice.TransactionMenuChoice(accountholder.UserAccount);
         }
 
     }
