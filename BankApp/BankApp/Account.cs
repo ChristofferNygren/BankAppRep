@@ -10,9 +10,9 @@ namespace BankApp
     {
         public double AccountBalance { get; set; }
         public string AccountType { get; set; }
-        public Account()
+        public Account(string accountType)
         {
-
+            this.AccountType = accountType;
         }
     }
 }
