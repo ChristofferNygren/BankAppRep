@@ -11,9 +11,10 @@ namespace BankApp
         public string Name { get; set; }
         public Guid Id { get; set; }
         public Account MyProperty { get; set; }
-        public AccountHolder()
-        {
 
+        public AccountHolder(string name)
+        {
+            this.Name = name;
         }  
     }
 }
