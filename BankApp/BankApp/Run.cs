@@ -9,4 +9,8 @@ namespace BankApp
     class Run
     {
     }
+    public void RunTheApp()
+    {
+
+    }
 }
