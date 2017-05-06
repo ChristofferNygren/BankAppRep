@@ -14,8 +14,7 @@ namespace BankApp
         public void RunTheApp()
         {           
             menus.MainMenu();
-            menuchoice.MainMenuChoice();
-            menuchoice.TransactionMenuChoice(accountholder.UserAccount);
+            menuchoice.MainMenuChoice(accountholder);
         }
 
     }

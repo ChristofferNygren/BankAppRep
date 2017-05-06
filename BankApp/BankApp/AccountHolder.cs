@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Threading;
 namespace BankApp
 {
     public class AccountHolder
@@ -29,13 +29,14 @@ namespace BankApp
         }
         public string ChooseAccountType()
         {
+            Menus menus = new Menus();
             string accountType = "";
             while (accountType != "Debitcard" || accountType != "ACB Express card")
             {
                 Console.WriteLine($"Ok, {Name}. Would you like to set up a Debit-Account, or a Credit-Account?");
                 Console.WriteLine("[1] for Debit-Account.");
                 Console.WriteLine("[2] for ACB Express-Account.");
-                accountType = SetAccountType();               
+                accountType = SetAccountType();                                                             
             }
             return accountType;
         }
