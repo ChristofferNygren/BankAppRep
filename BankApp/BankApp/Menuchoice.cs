@@ -29,26 +29,36 @@ namespace BankApp
                     break;
             }
         }
-        public void TransactionMenuChoice(Account account)
+        public void TransactionMenuChoice()
         {
             string choice = Console.ReadLine();
             switch (choice)
             {
                 case "1":
-                    Console.WriteLine("How much would you like to deposit?");
-                    double depositAmount = double.Parse(Console.ReadLine());
-                    account.AddFunds(account, depositAmount);
-                    Console.WriteLine($"You added {depositAmount} to your account.");
+                    menus.DepositMenu();
+                    //Console.WriteLine("How much would you like to deposit?");
+                    //double depositAmount = double.Parse(Console.ReadLine());
+                    //account.AddFunds(account, depositAmount);
+                    //Console.WriteLine($"You added {depositAmount} to your debit.");
                     break;
                 case "2":
-                    Console.WriteLine("How much would you like to withdraw?");
-                    double withdrawAmount = double.Parse(Console.ReadLine());
-                    account.WithdrawFunds(account, withdrawAmount);
-                    Console.WriteLine($"You withdrew {withdrawAmount} from your account.");
+                    menus.WithdrawMenu();
+                    //Console.WriteLine("How much would you like to withdraw?");
+                    //double withdrawAmount = double.Parse(Console.ReadLine());
+                    //account.WithdrawFunds(account, withdrawAmount);
+                    //Console.WriteLine($"You withdrew {withdrawAmount} from your account.");
                     break;
                 default:
                     break;
             }           
+        }
+        public void WithdrawMenuChoice()
+        {
+
+        }
+        public void DepositMenuChoice()
+        {
+
         }
     }
 }
