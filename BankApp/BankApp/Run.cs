@@ -8,9 +8,10 @@ namespace BankApp
 {
     public class Run
     {
+        public void RunTheApp()
+        {
+            
+        }
     }
-    public void RunTheApp()
-    {
-
-    }
+    
 }

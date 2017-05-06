@@ -7,10 +7,7 @@ using System.Threading.Tasks;
 namespace BankApp
 {
     public class ManageAccountHolder
-    {
-    }
-    public void CreateAccountHolder()
-    {
-
-    }
+    {       
+        
+    } 
 }

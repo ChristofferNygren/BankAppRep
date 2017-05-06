@@ -15,6 +15,11 @@ namespace BankApp
         public AccountHolder(string name)
         {
             this.Name = name;
-        }  
+        }
+
+        public void CreateAccountHolder()
+        {
+            
+        }
     }
 }
