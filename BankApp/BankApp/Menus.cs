@@ -13,9 +13,10 @@ namespace BankApp
         {
             Console.WriteLine("Hello and welcome to ACB, How can we be of service today?");
             Console.WriteLine("Would you like to:\n [1] Set up an account.");
-            Console.WriteLine("[2] Manage existing account.");
+            Console.WriteLine("[2] Manage existing account."); // Change name to existing account? Change CardType to existing account? 
             Console.WriteLine("[3] Make a deposit or withdrawl.");
             Console.WriteLine("[4] ");//Om jag kommer på nåt annat
+            Console.WriteLine("[5] Exit");
         }
 
         public void TransactionMenu(Account account)
