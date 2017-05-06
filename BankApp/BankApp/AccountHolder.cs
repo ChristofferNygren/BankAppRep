@@ -10,16 +10,28 @@ namespace BankApp
     {
         public string Name { get; set; }
         public Guid Id { get; set; }
-        public Account MyProperty { get; set; }
+        public Account UserAccount { get; set; }
 
-        public AccountHolder(string name)
+        public AccountHolder()
         {
-            this.Name = name;
+            this.Id = Guid.NewGuid();
+            this.Name = DecideAccountHolderName();
+            this.UserAccount = new Account(ChooseAccountType());
+            
         }
 
-        public void CreateAccountHolder()
+        public string DecideAccountHolderName()
         {
-            
+            Console.WriteLine("Welcome, All we need to know is your name, and what type of account you would like. The rest will be taken care of by our support staff.");
+            Console.WriteLine("In what name would you like to create the account?");
+            string name = Console.ReadLine();
+            return name;
+        }
+        private string ChooseAccountType()
+        {
+            Console.WriteLine($"Ok, {Name}. Would you like to set up a Debit-Account, or a Credit-Account?");
+            Console.WriteLine("[1] for Debit-Account.");
+            Console.WriteLine("[2] for Credit-Account.");           
         }
     }
 }

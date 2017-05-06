@@ -24,12 +24,6 @@ namespace BankApp
             Console.WriteLine("Would you like to make a witdrawl, press [1]\nDeposit, press [2]");
             menuchoice.transactionMenuChoice();
         }
-        public void SetUpAccount()
-        {
-            Console.WriteLine("Allrighty then! redirecting you to the setup page");
-            Thread.Sleep(3000);
-
-        }
         public void ManageAccount()
         {
 
