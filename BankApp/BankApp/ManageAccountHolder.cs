@@ -8,10 +8,7 @@ namespace BankApp
 {
     public class ManageAccountHolder
     {
-        public void CreateAccountHolder()
-        {
 
-        }
     }
 
 }
