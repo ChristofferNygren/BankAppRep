@@ -7,6 +7,13 @@ using System.Threading.Tasks;
 namespace BankApp
 {
     public class AccountHolder
-    {      
+    {
+        public string Name { get; set; }
+        public Guid Id { get; set; }
+        public Account MyProperty { get; set; }
+        public AccountHolder()
+        {
+
+        }  
     }
 }

@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace BankApp
 {
-    public class Account
+   public class Account
     {
+        public double AccountBalance { get; set; }
+        public string AccountType { get; set; }
+        public Account()
+        {
+
+        }
     }
 }

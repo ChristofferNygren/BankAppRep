@@ -8,5 +8,15 @@ namespace BankApp
 {
     public class Menus
     {
+    
     }
+    public void MainMenu()
+    {
+
+    }
+    public void TransactionMenu()
+    {
+
+    }
+    // Other menus should be added here.
 }
