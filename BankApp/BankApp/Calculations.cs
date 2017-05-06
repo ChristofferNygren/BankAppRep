@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BankApp
 {
-    class Calculations
+    public class Calculations
     {
     }
 }
