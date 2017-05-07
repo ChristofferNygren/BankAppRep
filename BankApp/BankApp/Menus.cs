@@ -41,9 +41,9 @@ namespace BankApp
         }
         public void ManageAccount(AccountHolder a)
         {
-            Console.WriteLine($"Welcome {a.Name}, What feature of your account would you like to change? ");  
-            // HÄR SKA ALEX FORTSÄTTA KODA SATAN IMÖÖÖRN!
-            // hehe
+            Console.WriteLine($"Welcome {a.Name}, What feature of your account would you like to change? ");
+            Console.WriteLine($"[1] Name of accountholder. (Only if you have legally changed your name from {a.Name}).\n[2] account-type");
+            menuchoice.ManageAccountChoice(a);
         }
 
     }

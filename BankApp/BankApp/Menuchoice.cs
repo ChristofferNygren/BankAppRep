@@ -85,5 +85,21 @@ namespace BankApp
         public void DebitMenuChoice()
         {
         }
+        public void ManageAccountChoice(AccountHolder a)
+        {
+            ManageAccountHolder mAH = new ManageAccountHolder();
+            string choice = Console.ReadLine();
+            switch (choice)
+            {
+                case "1":
+                    mAH.ChangeAccountHolderName(a);
+                    break;
+                case "2":
+                    mAH.ChangeAccountHolderAccountType(a);
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }
