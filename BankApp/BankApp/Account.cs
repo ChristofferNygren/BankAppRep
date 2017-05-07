@@ -36,5 +36,10 @@ namespace BankApp
                 account.AccountBalanceDebit -= withdraw;
             }
         }
+        public void CreditIntrestCalculation()
+        {
+            AccountBalanceCredit = AccountBalanceCredit + AccountBalanceCredit * 0.05;
+            Console.WriteLine($"Your current loan with an intrest of 5% adds up to {AccountBalanceCredit}");
+        }
     }
 }
