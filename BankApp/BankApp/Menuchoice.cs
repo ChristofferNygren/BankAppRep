@@ -25,7 +25,7 @@ namespace BankApp
                     menus.ManageAccount(accountHolder);
                     break;
                 case "3":
-                    menus.TransactionMenu();
+                    menus.TransactionMenu(accountHolder);
                     break;
                 case "4":
                     break;
@@ -33,20 +33,20 @@ namespace BankApp
                     break;
             }
         }
-        public void TransactionMenuChoice()
+        public void TransactionMenuChoice(AccountHolder accountholder)
         {
             string choice = Console.ReadLine();
             switch (choice)
             {
                 case "1":
-                    menus.DepositMenu();
+                    menus.DepositMenu(accountholder);
                     //Console.WriteLine("How much would you like to deposit?");
                     //double depositAmount = double.Parse(Console.ReadLine());
                     //account.AddFunds(account, depositAmount);
                     //Console.WriteLine($"You added {depositAmount} to your debit.");
                     break;
                 case "2":
-                    menus.WithdrawMenu();
+                    menus.WithdrawMenu(accountholder);
                     //Console.WriteLine("How much would you like to withdraw?");
                     //double withdrawAmount = double.Parse(Console.ReadLine());
                     //account.WithdrawFunds(account, withdrawAmount);
@@ -56,34 +56,46 @@ namespace BankApp
                     break;
             }           
         }
-        public void WithdrawMenuChoice()
+        public void WithdrawMenuChoice(AccountHolder accountholder)
         {
             string choice = Console.ReadLine();
 
             switch (choice)
             {
                 case "1":
-                    menus.DebitMenu();
+                    menus.WithdrawDebitMenu(accountholder);
                     break;
                 case "2":
-                    menus.CreditMenu();
+                    menus.WithdrawCreditMenu(accountholder);
                     break;
                 default:
                     break;
             }
         }
-        public void DepositMenuChoice()
+        public void DepositMenuChoice(AccountHolder accountholder)
         {
-
+            double addAmount = double.Parse(Console.ReadLine());
+            accountholder.UserAccount.AddFunds(accountholder.UserAccount, addAmount);
+            Console.WriteLine($"You added {addAmount} to you debit.\nYour balance is: {accountholder.UserAccount.AccountBalanceDebit}");
         }
 
-        public void CreditMenuChoice()
+        public void WithdrawCreditMenuChoice(AccountHolder accountholder)
         {
-            double Withdraw = double.Parse(Console.ReadLine());
-
+            if (accountholder.UserAccount.AccountType == "ACB Express card")
+            {
+                double withdrawAmount = double.Parse(Console.ReadLine());
+                Console.WriteLine($"You withdrew {withdrawAmount} from your credit");
+            }
+            else
+            {
+                Console.WriteLine("You don't own a credit card!\nTo use this feature go to Manage existing account in the Main menu");
+            }          
         }
-        public void DebitMenuChoice()
+        public void WithdrawDebitMenuChoice(AccountHolder accountholder)
         {
+            double withdrawAmount = double.Parse(Console.ReadLine());
+            accountholder.UserAccount.WithdrawFunds(accountholder.UserAccount, withdrawAmount);
+            Console.WriteLine($"You withdrew {withdrawAmount} from your debit.\nYour balance is: {accountholder.UserAccount.AccountBalanceDebit}");
         }
         public void ManageAccountChoice(AccountHolder a)
         {

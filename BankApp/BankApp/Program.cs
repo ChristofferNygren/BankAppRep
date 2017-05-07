@@ -10,8 +10,7 @@ namespace BankApp
     {
         static void Main(string[] args)
         {
-            Run run = new BankApp.Run();
-            run.RunTheApp(run);
+           
         }
     }
 }
