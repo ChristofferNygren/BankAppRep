@@ -85,8 +85,8 @@ namespace BankApp
             {
                 double addCreditAmount = double.Parse(Console.ReadLine());
                 Console.WriteLine($"You withdrew {addCreditAmount} from your credit");
-                accountholder.UserAccount.AddFundsCredit(accountholder.UserAccount, addCreditAmount);
-                Console.WriteLine($"Your total credit is: {accountholder.UserAccount.AccountBalanceCredit}");
+                accountholder.UserAccount.AddFundsCredit(accountholder.UserAccount, addCreditAmount);                
+                accountholder.UserAccount.CreditIntrestCalculation();
             }
             else
             {
@@ -97,8 +97,7 @@ namespace BankApp
         {
             double withdrawAmount = double.Parse(Console.ReadLine());
             Console.Clear();
-            accountholder.UserAccount.WithdrawFunds(accountholder.UserAccount, withdrawAmount);
-            Console.WriteLine($"You withdrew {withdrawAmount} from your debit.\nYour balance is: {accountholder.UserAccount.AccountBalanceDebit}");
+            accountholder.UserAccount.WithdrawFunds(accountholder.UserAccount, withdrawAmount);           
             Thread.Sleep(3000);
             Console.Clear();
         }

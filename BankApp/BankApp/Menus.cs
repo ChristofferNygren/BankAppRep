@@ -52,11 +52,25 @@ namespace BankApp
         {
             Menuchoice menuchoice = new Menuchoice();
             Console.WriteLine("How much would you like to withdraw?");
-            menuchoice.WithdrawCreditMenuChoice(accountholder);
-            Console.WriteLine("Our current rate is 5%");
+            menuchoice.WithdrawCreditMenuChoice(accountholder);           
             Console.WriteLine("\nPress any key to continue...");
             Console.ReadKey();
             Console.Clear();
+        }
+        public void ShowFunds(AccountHolder accountholder)
+        {
+            if (accountholder.UserAccount.AccountType == "ACB Express card")
+            {
+                Console.WriteLine("Here's you current balance on your account:\n");               
+                Console.WriteLine($"Your debit funds: {accountholder.UserAccount.AccountBalanceDebit}");
+                Console.WriteLine($"Your credit funds: {accountholder.UserAccount.AccountBalanceCredit}");
+                Thread.Sleep(3000);
+            }
+            else
+            {
+                Console.WriteLine($"Your debit funds: {accountholder.UserAccount.AccountBalanceDebit}");
+                Thread.Sleep(3000);
+            }
         }
         public void ManageAccount(AccountHolder a)
         {

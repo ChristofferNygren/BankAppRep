@@ -29,12 +29,18 @@ namespace BankApp
         {
             if (withdraw > AccountBalanceDebit)
             {
-                Console.WriteLine("\nYou dont have that amount.\nPlease add funds to your account before you continue.\n");
+                Console.WriteLine($"\nYou dont have that amount.\nYour balance is: {AccountBalanceDebit}\nPlease add funds to your account before you continue.\n");
             }
             else
             {
                 account.AccountBalanceDebit -= withdraw;
+                Console.WriteLine($"You withdrew {withdraw} from your debit.\nYour balance is: {AccountBalanceDebit}");
             }
+        }
+        public void CreditIntrestCalculation()
+        {
+            AccountBalanceCredit = AccountBalanceCredit + AccountBalanceCredit * 0.05;
+            Console.WriteLine($"Your current loan with an intrest of 5% adds up to {AccountBalanceCredit}");
         }
     }
 }
