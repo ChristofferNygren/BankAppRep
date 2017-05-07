@@ -23,8 +23,10 @@ namespace BankApp
                     menus.TransactionMenu(accountHolder);
                     return true;
                 case "3":
+                    menus.ShowFunds(accountHolder);
                     return true;
-                case "4": ExitTheBank(accountHolder);
+                case "4":
+                    ExitTheBank(accountHolder);
                     return false;
                 default:
                     return true;
@@ -64,21 +66,40 @@ namespace BankApp
         }
         public void DepositMenuChoice(AccountHolder accountholder)
         {
-            double addAmount = double.Parse(Console.ReadLine());
-            accountholder.UserAccount.AddFundsDebit(accountholder.UserAccount, addAmount);
-            Console.WriteLine($"You added {addAmount} to you debit.\nYour balance is: {accountholder.UserAccount.AccountBalanceDebit}");
-            Thread.Sleep(3000);
-            Console.Clear();
+            try
+            {
+                double addAmount = Math.Abs(double.Parse(Console.ReadLine()));
+                accountholder.UserAccount.AddFundsDebit(accountholder.UserAccount, addAmount);
+                Console.WriteLine($"You added {addAmount} to you debit.\nYour balance is: {accountholder.UserAccount.AccountBalanceDebit}");
+                Thread.Sleep(3000);
+                Console.Clear();
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("You have to withdraw a numerical value");
+                Thread.Sleep(2000);
+                Console.Clear();
+            }
+
         }
 
         public void WithdrawCreditMenuChoice(AccountHolder accountholder)
         {
             if (accountholder.UserAccount.AccountType == "ACB Express card")
             {
-                double addCreditAmount = double.Parse(Console.ReadLine());
-                Console.WriteLine($"You withdrew {addCreditAmount} from your credit");
-                accountholder.UserAccount.AddFundsCredit(accountholder.UserAccount, addCreditAmount);                
-                accountholder.UserAccount.CreditIntrestCalculation();
+                try
+                {
+                    double addCreditAmount = Math.Abs(double.Parse(Console.ReadLine()));
+                    Console.WriteLine($"You withdrew {addCreditAmount} from your credit");
+                    accountholder.UserAccount.AddFundsCredit(accountholder.UserAccount, addCreditAmount);
+                    accountholder.UserAccount.CreditIntrestCalculation();
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("You have to withdraw a numerical value");
+                    Thread.Sleep(2000);
+                    Console.Clear();
+                }
             }
             else
             {
@@ -87,11 +108,21 @@ namespace BankApp
         }
         public void WithdrawDebitMenuChoice(AccountHolder accountholder)
         {
-            double withdrawAmount = double.Parse(Console.ReadLine());
-            Console.Clear();
-            accountholder.UserAccount.WithdrawFunds(accountholder.UserAccount, withdrawAmount);           
-            Thread.Sleep(3000);
-            Console.Clear();
+            try
+            {
+                double withdrawAmount = Math.Abs(double.Parse(Console.ReadLine()));
+                Console.Clear();
+                accountholder.UserAccount.WithdrawFunds(accountholder.UserAccount, withdrawAmount);
+                Thread.Sleep(3000);
+                Console.Clear();
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("You have to withdraw a numerical value");
+                Thread.Sleep(2000);
+                Console.Clear();
+            }
+
         }
         public void ManageAccountChoice(AccountHolder a)
         {

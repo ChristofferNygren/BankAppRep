@@ -63,7 +63,7 @@ namespace BankApp
             {
                 Console.WriteLine("Here's you current balance on your account:\n");               
                 Console.WriteLine($"Your debit funds: {accountholder.UserAccount.AccountBalanceDebit}");
-                Console.WriteLine($"Your credit funds: {accountholder.UserAccount.AccountBalanceCredit}");
+                Console.WriteLine($"Your current credit debt: {accountholder.UserAccount.AccountBalanceCredit}");
                 Thread.Sleep(3000);
             }
             else
@@ -71,6 +71,7 @@ namespace BankApp
                 Console.WriteLine($"Your debit funds: {accountholder.UserAccount.AccountBalanceDebit}");
                 Thread.Sleep(3000);
             }
+            Console.Clear();
         }
         public void ManageAccount(AccountHolder a)
         {
