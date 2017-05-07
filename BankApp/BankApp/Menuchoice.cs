@@ -15,19 +15,18 @@ namespace BankApp
             string choice = Console.ReadLine();
             switch (choice)
             {
+                //case "1":
+                //    accountHolder = new AccountHolder();
+                //    Console.WriteLine("Thanks for signing with ACB, You can now start using our services.\nReturning to main menu.");
+                //    Thread.Sleep(3000);
+                //    break;
                 case "1":
-                    accountHolder = new AccountHolder();
-                    Console.WriteLine("Thanks for signing with ACB, You can now start using our services.\nReturning to main menu.");
-                    Thread.Sleep(3000);
-                    menus.MainMenu();
-                    break;
-                case "2":
                     menus.ManageAccount(accountHolder);
                     break;
-                case "3":
+                case "2":
                     menus.TransactionMenu(accountHolder);
                     break;
-                case "4":
+                case "3":
                     break;
                 default:
                     break;

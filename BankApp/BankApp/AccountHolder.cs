@@ -29,9 +29,8 @@ namespace BankApp
         }
         public string ChooseAccountType()
         {
-            Menus menus = new Menus();
             string accountType = "";
-            while (accountType != "Debitcard" || accountType != "ACB Express card")
+            while (accountType != "Debitcard" && accountType != "ACB Express card")
             {
                 Console.WriteLine($"Ok, {Name}. Would you like to set up a Debit-Account, or a Credit-Account?");
                 Console.WriteLine("[1] for Debit-Account.");
