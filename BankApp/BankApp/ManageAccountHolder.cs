@@ -14,11 +14,13 @@ namespace BankApp
             bool keeprunning = true;
             Console.WriteLine($"Allrighty then, what is your new name?");
             string newName = Console.ReadLine();
+            Console.Clear();
             while (keeprunning)
             {
                 Console.WriteLine($"Are you sure you would like to replace {a.Name}, with {newName}");
                 Console.WriteLine("[Y] for yes.\n[N] for no.");
                 string choice = Console.ReadLine();
+                Console.Clear();
                 if (choice.ToLower() == "y")
                 {
                     a.Name = newName;
@@ -48,6 +50,7 @@ namespace BankApp
                 {
                     Console.WriteLine("[Y] for yes.\n[N] for no.");
                     string choice = Console.ReadLine();
+                    Console.Clear();
                     if (choice.ToLower() == "y")
                     {
                         a.UserAccount.AccountType = "ACB Express card";
@@ -75,6 +78,7 @@ namespace BankApp
                 {
                     Console.WriteLine("[Y] for yes.\n[N] for no.");
                     string choice = Console.ReadLine();
+                    Console.Clear();
                     if (choice.ToLower() == "y")
                     {
                         a.UserAccount.AccountType = "Debitcard";

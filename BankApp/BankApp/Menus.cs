@@ -46,6 +46,7 @@ namespace BankApp
             menuchoice.WithdrawDebitMenuChoice(accountholder);
             Console.WriteLine("\nPress any key to continue...");
             Console.ReadKey();
+            Console.Clear();
         }
         public void WithdrawCreditMenu(AccountHolder accountholder)
         {
@@ -55,6 +56,7 @@ namespace BankApp
             Console.WriteLine("Our current rate is 5%");
             Console.WriteLine("\nPress any key to continue...");
             Console.ReadKey();
+            Console.Clear();
         }
         public void ManageAccount(AccountHolder a)
         {
