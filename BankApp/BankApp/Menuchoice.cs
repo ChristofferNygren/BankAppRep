@@ -74,7 +74,7 @@ namespace BankApp
         public void DepositMenuChoice(AccountHolder accountholder)
         {
             double addAmount = double.Parse(Console.ReadLine());
-            accountholder.UserAccount.AddFunds(accountholder.UserAccount, addAmount);
+            accountholder.UserAccount.AddFundsDebit(accountholder.UserAccount, addAmount);
             Console.WriteLine($"You added {addAmount} to you debit.\nYour balance is: {accountholder.UserAccount.AccountBalanceDebit}");
         }
 
@@ -82,12 +82,14 @@ namespace BankApp
         {
             if (accountholder.UserAccount.AccountType == "ACB Express card")
             {
-                double withdrawAmount = double.Parse(Console.ReadLine());
-                Console.WriteLine($"You withdrew {withdrawAmount} from your credit");
+                double addCreditAmount = double.Parse(Console.ReadLine());
+                Console.WriteLine($"You withdrew {addCreditAmount} from your credit");
+                accountholder.UserAccount.AddFundsCredit(accountholder.UserAccount, addCreditAmount);
+                Console.WriteLine($"Your total credit is: {accountholder.UserAccount.AccountBalanceCredit}");
             }
             else
             {
-                Console.WriteLine("You don't own a credit card!\nTo use this feature go to Manage existing account in the Main menu");
+                Console.WriteLine("\nYou don't own a credit card!\nTo use this feature go to Manage existing account in the Main menu");
             }          
         }
         public void WithdrawDebitMenuChoice(AccountHolder accountholder)
