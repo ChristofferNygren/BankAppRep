@@ -17,7 +17,6 @@ namespace BankApp
             this.Id = Guid.NewGuid();
             this.Name = DecideAccountHolderName();
             this.UserAccount = new Account(ChooseAccountType());
-
         }
 
         public string DecideAccountHolderName()
@@ -25,6 +24,7 @@ namespace BankApp
             Console.WriteLine("Welcome, All we need to know is your name, and what type of account you would like. The rest will be taken care of by our support staff.");
             Console.WriteLine("In what name would you like to create the account?");
             string name = Console.ReadLine();
+            Console.Clear();
             return name;
         }
         public string ChooseAccountType()
@@ -42,6 +42,7 @@ namespace BankApp
         public string SetAccountType()
         {
             string choice = Console.ReadLine();
+            Console.Clear();
             string a = "";
             switch (choice)
             {

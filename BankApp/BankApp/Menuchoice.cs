@@ -10,31 +10,30 @@ namespace BankApp
     public class Menuchoice
     {
         Menus menus = new Menus();
-        public void MainMenuChoice(AccountHolder accountHolder)
+        public bool MainMenuChoice(AccountHolder accountHolder)
         {
             string choice = Console.ReadLine();
+            Console.Clear();
             switch (choice)
             {
-                //case "1":
-                //    accountHolder = new AccountHolder();
-                //    Console.WriteLine("Thanks for signing with ACB, You can now start using our services.\nReturning to main menu.");
-                //    Thread.Sleep(3000);
-                //    break;
                 case "1":
                     menus.ManageAccount(accountHolder);
-                    break;
+                    return true;
                 case "2":
                     menus.TransactionMenu(accountHolder);
-                    break;
+                    return true;
                 case "3":
-                    break;
+                    return true;
+                case "4": ExitTheBank(accountHolder);
+                    return false;
                 default:
-                    break;
+                    return true;
             }
         }
         public void TransactionMenuChoice(AccountHolder accountholder)
         {
             string choice = Console.ReadLine();
+            Console.Clear();
             switch (choice)
             {
                 case "1":
@@ -58,7 +57,7 @@ namespace BankApp
         public void WithdrawMenuChoice(AccountHolder accountholder)
         {
             string choice = Console.ReadLine();
-
+            Console.Clear();
             switch (choice)
             {
                 case "1":
@@ -76,6 +75,8 @@ namespace BankApp
             double addAmount = double.Parse(Console.ReadLine());
             accountholder.UserAccount.AddFunds(accountholder.UserAccount, addAmount);
             Console.WriteLine($"You added {addAmount} to you debit.\nYour balance is: {accountholder.UserAccount.AccountBalanceDebit}");
+            Thread.Sleep(3000);
+            Console.Clear();
         }
 
         public void WithdrawCreditMenuChoice(AccountHolder accountholder)
@@ -93,13 +94,17 @@ namespace BankApp
         public void WithdrawDebitMenuChoice(AccountHolder accountholder)
         {
             double withdrawAmount = double.Parse(Console.ReadLine());
+            Console.Clear();
             accountholder.UserAccount.WithdrawFunds(accountholder.UserAccount, withdrawAmount);
             Console.WriteLine($"You withdrew {withdrawAmount} from your debit.\nYour balance is: {accountholder.UserAccount.AccountBalanceDebit}");
+            Thread.Sleep(3000);
+            Console.Clear();
         }
         public void ManageAccountChoice(AccountHolder a)
         {
             ManageAccountHolder mAH = new ManageAccountHolder();
             string choice = Console.ReadLine();
+            Console.Clear();
             switch (choice)
             {
                 case "1":
@@ -111,6 +116,11 @@ namespace BankApp
                 default:
                     break;
             }
+        }
+        public void ExitTheBank(AccountHolder a)
+        {
+            Console.WriteLine($"Thanks for your visit {a.Name}, Hope to see you soon.");
+            Thread.Sleep(2500);
         }
     }
 }

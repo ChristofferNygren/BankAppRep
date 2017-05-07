@@ -13,18 +13,20 @@ namespace BankApp
         Menuchoice menuchoice = new Menuchoice();
         public void RunTheApp()
         {
+            bool keepRunning = true;
             WelcomeAndRegister();
-            while (true)
+            while (keepRunning)
             {               
                 menus.MainMenu();
-                menuchoice.MainMenuChoice(accountholder);
+                keepRunning = menuchoice.MainMenuChoice(accountholder);
             }
         }
         public void WelcomeAndRegister()
         {
             Console.WriteLine("Hello and Welcome to ACB!\nSince you are not currently a member of our bank, we will have to guide you through a registration process.");
             Thread.Sleep(5000);
-             accountholder = new AccountHolder();
+            Console.Clear();
+            accountholder = new AccountHolder();
         }
     }
 }
