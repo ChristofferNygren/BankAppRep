@@ -29,11 +29,12 @@ namespace BankApp
         {
             if (withdraw > AccountBalanceDebit)
             {
-                Console.WriteLine($"\nYou dont have that amount available in your account.\nCurrent account balance:{AccountBalanceDebit}.\n");
+                Console.WriteLine($"\nYou dont have that amount.\nYour balance is: {AccountBalanceDebit}\nPlease add funds to your account before you continue.\n");
             }
             else
             {
                 account.AccountBalanceDebit -= withdraw;
+                Console.WriteLine($"You withdrew {withdraw} from your debit.\nYour balance is: {AccountBalanceDebit}");
             }
         }
         public void CreditIntrestCalculation()
