@@ -14,17 +14,17 @@ namespace BankApp
         public void MainMenu()
         {
             Console.WriteLine("Hello and welcome to ACB, How can we be of service today?");
-            Console.WriteLine("Would you like to:");
-            Console.WriteLine("[1] Manage existing account."); // Change name of existing account holder? Change CardType to existing account? 
+            Console.WriteLine("Choose a service:");
+            Console.WriteLine("[1] Manage existing account.");  
             Console.WriteLine("[2] Make a deposit or withdrawl.");
-            Console.WriteLine("[3] ");//Om jag kommer på nåt annat
+            Console.WriteLine("[3] Show current account-balance.");
             Console.WriteLine("[4] Exit");
         }
 
         public void TransactionMenu(AccountHolder accountholder)
         {
             Menuchoice menuchoice = new Menuchoice();
-            Console.WriteLine("Would you like to make a:\n[1] Deposit\n[2] Withdraw");
+            Console.WriteLine("Would you like to make a:\n[1] Deposit\n[2] Withdrawl");
             menuchoice.TransactionMenuChoice(accountholder);
         }
         public void WithdrawMenu(AccountHolder accountholder)

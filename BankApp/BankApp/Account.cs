@@ -29,7 +29,7 @@ namespace BankApp
         {
             if (withdraw > AccountBalanceDebit)
             {
-                Console.WriteLine("\nYou dont have that amount.\nPlease add funds to your account before you continue.\n");
+                Console.WriteLine($"\nYou dont have that amount available in your account.\nCurrent account balance:{AccountBalanceDebit}.\n");
             }
             else
             {

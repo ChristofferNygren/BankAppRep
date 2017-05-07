@@ -23,8 +23,9 @@ namespace BankApp
         }
         public void WelcomeAndRegister()
         {
-            Console.WriteLine("Hello and Welcome to ACB!\nSince you are not currently a member of our bank, we will have to guide you through a registration process.");
-            Thread.Sleep(5000);
+            Console.WriteLine("Hello and Welcome to ACB!\nLet me guide you through a registration process.");
+            Console.WriteLine("Press any key when you are ready to begin.");
+            Console.ReadKey();
             Console.Clear();
             accountholder = new AccountHolder();
         }

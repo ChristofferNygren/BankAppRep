@@ -45,7 +45,7 @@ namespace BankApp
             if (a.UserAccount.AccountType == "Debitcard")
             {
                 Console.WriteLine($"You currently have a {a.UserAccount.AccountType} card with us. Would you like to change up your plan?");
-                Console.WriteLine("Changing your plan will give you the option to withdraw and shop from a credit portion of your account for a fee of 5%");
+                Console.WriteLine("Changing your plan will give you the option to withdraw and shop\n from a credit portion of your account for a fee of 5%");
                 while (keeprunning)
                 {
                     Console.WriteLine("[Y] for yes.\n[N] for no.");
@@ -72,7 +72,7 @@ namespace BankApp
             #region From ACB Express to Debit
             else if (a.UserAccount.AccountType == "ACB Express card")
             {
-                Console.WriteLine($"You currently have a {a.UserAccount.AccountType} card with us. Would you like to change up your plan?");
+                Console.WriteLine($"You currently have a {a.UserAccount.AccountType} card with us.\n Would you like to change up your plan?");
                 Console.WriteLine("Changing your plan will remove the option to withdraw and shop with credit.");
                 while (keeprunning)
                 {

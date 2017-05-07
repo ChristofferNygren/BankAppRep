@@ -21,7 +21,7 @@ namespace BankApp
 
         public string DecideAccountHolderName()
         {
-            Console.WriteLine("Welcome, All we need to know is your name, and what type of account you would like. The rest will be taken care of by our support staff.");
+            Console.WriteLine("Welcome, All we need to know is your name, and what type of account you would like.\nThe rest will be taken care of by our support staff.");
             Console.WriteLine("In what name would you like to create the account?");
             string name = Console.ReadLine();
             Console.Clear();

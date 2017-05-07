@@ -38,17 +38,9 @@ namespace BankApp
             {
                 case "1":
                     menus.DepositMenu(accountholder);
-                    //Console.WriteLine("How much would you like to deposit?");
-                    //double depositAmount = double.Parse(Console.ReadLine());
-                    //account.AddFunds(account, depositAmount);
-                    //Console.WriteLine($"You added {depositAmount} to your debit.");
                     break;
                 case "2":
                     menus.WithdrawMenu(accountholder);
-                    //Console.WriteLine("How much would you like to withdraw?");
-                    //double withdrawAmount = double.Parse(Console.ReadLine());
-                    //account.WithdrawFunds(account, withdrawAmount);
-                    //Console.WriteLine($"You withdrew {withdrawAmount} from your account.");
                     break;
                 default:
                     break;
@@ -90,7 +82,7 @@ namespace BankApp
             }
             else
             {
-                Console.WriteLine("\nYou don't own a credit card!\nTo use this feature go to Manage existing account in the Main menu");
+                Console.WriteLine("\nYour current account does not include a credit balance\nTo upgrade your account, select manage existing account in the Main menu");
             }          
         }
         public void WithdrawDebitMenuChoice(AccountHolder accountholder)
